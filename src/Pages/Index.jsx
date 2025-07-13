@@ -49,14 +49,14 @@ const Index = () => {
       <Home />
 
       {/* About Section */}
-      <section className="py-24 bg-secondary/50">
+      <section className="pt-24 bg-secondary/50">
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-teal-500/10 text-teal-400 mb-4"
+            className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-gradient-to-r from-pink-500 to-purple-600 mb-4"
           >
             About Me
           </motion.span>
@@ -66,7 +66,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-4xl font-bold mb-6"
+            className="text-4xl font-bold text-purple-600 mb-6"
           >
             Who I Am
           </motion.h2>
@@ -81,7 +81,7 @@ const Index = () => {
             I'm a Computer Science student specializing in AI & ML. Passionate about programming, AI integration, and building innovative web applications.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="dark:text-black grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {[
               {
                 title: "Computer Science",
@@ -119,7 +119,7 @@ const Index = () => {
           >
             <Link
               to="/about"
-              className="inline-flex items-center px-6 py-3 bg-teal-500 text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
             >
               More About Me
             </Link>
@@ -128,7 +128,7 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="py-24">
+      <section className="pt-24 pb-32 bg-secondary/50" id="skills">
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -160,7 +160,7 @@ const Index = () => {
             A collection of technologies I work with to build web applications and solve complex problems.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className=" grid grid-cols-1  md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {techStack.map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -169,7 +169,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <div className="flex justify-between items-center mb-2">
+                <div className="flexjustify-between items-center mb-2">
                   <h3 className="text-lg font-medium">{tech.name}</h3>
                   <span className="text-sm text-muted-foreground">{tech.proficiency}%</span>
                 </div>
@@ -186,7 +186,7 @@ const Index = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24 bg-secondary/50" id="projects">
+      <section className="  bg-secondary/50" id="projects">
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -218,7 +218,7 @@ const Index = () => {
             A selection of my recent web development and programming projects.
           </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 dark:text-black ">
             {featuredProjects.map((project, i) => (
               <motion.div
                 key={project.title}
@@ -228,14 +228,14 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: i * 0.2 }}
                 className="bg-white rounded-lg overflow-hidden shadow"
               >
-                <div className="h-48 overflow-hidden">
+                <div className="h-48  overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
-                <div className="p-6 text-left">
+                <div className="p-6 text-left ">
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-muted-foreground mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-6">
