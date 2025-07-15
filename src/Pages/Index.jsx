@@ -56,7 +56,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-gradient-to-r from-pink-500 to-purple-600 text-white mb-4"
+            className="inline-block py-1 px-3 rounded-full text-xs font-medium bg-purple-500/10 text-purple-500  mb-4"
           >
             About Me
           </motion.span>
@@ -118,7 +118,7 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="pt-24 pb-32">
+      <section className="pt-12 pb-32">
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -133,7 +133,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl font-bold mb-6"
+            className="text-4xl  text-purple-600 dark:text-purple-400 font-bold mb-6"
           >
             Tech Stack
           </motion.h2>
