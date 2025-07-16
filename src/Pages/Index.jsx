@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Home from '../Pages/Home';
+import { Star, ArrowRight } from 'lucide-react';
 
 const Index = () => {
   useEffect(() => {
@@ -41,7 +42,7 @@ const Index = () => {
     { name: "JavaScript", proficiency: 85 },
     { name: "React.js", proficiency: 80 },
     { name: "Node.js", proficiency: 75 },
-    { name: "Firebase", proficiency: 70 },
+    { name: "PHP", proficiency: 70 },
     { name: "Next.js", proficiency: 65 },
   ];
 
@@ -118,7 +119,7 @@ const Index = () => {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="pt-12 pb-32">
+      <section className="pt-12 pb-12">
         <div className="container mx-auto px-4 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -162,6 +163,32 @@ const Index = () => {
         </div>
       </section>
 
+      <section>
+  <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="glass-panel p-12 rounded-lg max-w-4xl mx-auto text-center"
+        >
+          <div className="flex items-center justify-center w-16 h-16 bg-pink-500/10 rounded-full mb-6 mx-auto">
+            <Star className="w-8 h-8 text-pink-400" />
+          </div>
+          <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
+          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            I'm currently available for freelance work and open to new opportunities. If you have a project in mind or want to collaborate, let's connect!
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg font-medium hover:bg-opacity-90 transition-all"
+          >
+            Get in Touch
+            <ArrowRight className="ml-2 h-5 pt-1 w-5" />
+          </Link>
+        </motion.div>
+      </div>
+      </section>
       {/* Remaining Sections follow similar color styling... */}
     </div>
   );
