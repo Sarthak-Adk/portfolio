@@ -39,7 +39,7 @@ const ProjectCard = ({ title, description, image, tags, code, category, icon: Ic
         >
           {title}
         </motion.h3>
-        <p className="text-muted-foreground mb-4">{description}</p>
+        <p className="text-muted-foreground text-gray-700 mb-4">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-6">
           {tags.map((tag) => (

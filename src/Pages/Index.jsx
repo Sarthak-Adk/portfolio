@@ -75,7 +75,7 @@ const Index = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-gray-600 dark:text-gray-300 mb-12"
           >
-            I'm a Computer Science student specializing in AI & ML. Passionate about programming, AI integration, and building innovative web applications.
+            I'm a Computer Science student specializing in Web Development & Desktop Applications. Passionate about programming, AI integration, and building innovative web applications.
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

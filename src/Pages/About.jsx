@@ -193,7 +193,7 @@ const About = () => {
 
               {/* Grid for InfoCards */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
-                <InfoCard icon={User} title="Personal Interests">
+                <InfoCard icon={User} title="Personal Interests" >
                   {/* --- MODIFIED: Text color for list items --- */}
                   <ul className="space-y-2 text-black dark:text-white">
                     {[
