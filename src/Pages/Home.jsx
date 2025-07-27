@@ -1,5 +1,6 @@
 import React from "react";
 import profile from "../assets/profile.jpg";
+import { Link } from "react-router-dom";
 import { FaTwitter, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Home = () => {
@@ -25,12 +26,12 @@ const Home = () => {
 
         {/* Buttons */}
         <div className="flex gap-4 mb-6">
-          <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-full hover:scale-105 transition duration-300">
+         <Link to="/contact"><button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-full hover:scale-105 transition duration-300">
             Hire Me
-          </button>
-          <button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-full hover:scale-105 transition duration-300">
-            Let's Talk
-          </button>
+          </button></Link>
+          <Link to="/projects"><button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-full hover:scale-105 transition duration-300">
+            View Project
+          </button></Link>
         </div>
 
         {/* Social Icons */}
