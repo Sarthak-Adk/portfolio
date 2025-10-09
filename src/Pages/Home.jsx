@@ -1,60 +1,88 @@
 import React from "react";
-import profile from "../assets/profile.jpg";
-import { Link } from "react-router-dom";
-import { FaTwitter, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
+import p2 from "../assets/p2.jpg";
 
-const Home = () => {
+export default function Hero() {
   return (
-    <div className="px-4 md:px-[140px] py-16 pt-[134px] flex flex-col md:flex-row items-center justify-between bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-500">
-      
-      {/* Left Side */}
-      <div className="max-w-xl mr-12 **mb-10 md:mb-0 md:mr-20**"> {/* Added margin-bottom for small screens and margin-right for medium screens */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          I'm Sarthak Adhikari
-        </h1>
+    <section
+      id="home"
+      className="relative h-[100vh] flex flex-col md:flex-row justify-center items-center text-center md:text-left overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] px-6 md:px-20"
+    >
+      {/* 🫧 Bubble Background */}
+      <div className="absolute inset-0 overflow-hidden z-0">
+        <ul className="bubbles">
+          {Array.from({ length: 30 }).map((_, i) => (
+            <li key={i}></li>
+          ))}
+        </ul>
+      </div>
 
-        <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-4">
-          A Frontend Developer |
-        </h2>
+      {/* 💬 Text Section */}
+      <div className="relative z-10 flex-1 px-10 flex flex-col justify-center">
+        <motion.h1
+          className="text-5xl md:text-6xl font-bold mb-4 whitespace-nowrap"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Hi, I'm <span className="text-blue-400">Sarthak Adhikari</span>
+        </motion.h1>
 
-        <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-          Passionate about programming and software development with expertise
-          in JavaScript, C and C++. Building modern web applications using
-          Node.js, React.js, and Next.js. Freelancer specializing in
-          AI-powered solutions.
-        </p>
+        <motion.h2
+          className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          Frontend Developer | React Enthusiast
+        </motion.h2>
 
-        {/* Buttons */}
-        <div className="flex gap-4 mb-6">
-         <Link to="/contact"><button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-full hover:scale-105 transition duration-300">
-            Hire Me
-          </button></Link>
-          <Link to="/projects"><button className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-full hover:scale-105 transition duration-300">
-            View Project
-          </button></Link>
-        </div>
+        <motion.p
+          className="text-gray-400 max-w-xl leading-relaxed mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          I love turning ideas into interactive, visually stunning web
+          experiences using React, Tailwind, and motion design. My goal is to
+          create digital products that are both functional and delightful to use.
+        </motion.p>
 
-        {/* Social Icons */}
-        <div className="flex gap-4 text-xl">
-          <FaTwitter className="text-pink-500 hover:text-purple-600 hover:scale-110 transition cursor-pointer" />
-          <FaFacebook className="text-pink-500 hover:text-purple-600 hover:scale-110 transition cursor-pointer" />
-          <FaGithub className="text-pink-500 hover:text-purple-600 hover:scale-110 transition cursor-pointer" />
-          <FaLinkedin className="text-pink-500 hover:text-purple-600 hover:scale-110 transition cursor-pointer" />
+        <div className="flex justify-center md:justify-start gap-4">
+          <motion.a
+            href="#projects"
+            className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-full font-semibold transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+          >
+            View My Work
+          </motion.a>
+
+          <motion.a
+            href="#contact"
+            className="px-6 py-3 border border-gray-500 hover:bg-white/10 rounded-full font-semibold transition-all duration-300"
+            whileHover={{ scale: 1.05 }}
+          >
+            Contact Me
+          </motion.a>
         </div>
       </div>
 
-      {/* Right Side */}
-      <div className="mt-10 ml-12 md:mt-0 relative">
-        <div className="rounded-full border-[6px] border-purple-600 p-1 shadow-xl shadow-purple-700 hover:shadow-pink-500 transition duration-500">
+      {/* 🧑‍💻 Profile Image */}
+      <motion.div
+        className="z-10 flex-1 flex justify-center mt-10 md:mt-0"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      >
+        <div className="relative w-56 h-56 md:w-72 md:h-72">
           <img
-            src={profile}
-            alt="Profile"
-            className="rounded-full w-[280px] md:w-[350px]"
+            src={p2}
+            alt="Sarthak Adhikari"
+            className="w-full h-full object-cover rounded-full border-4 border-blue-500 shadow-lg shadow-blue-500/40 hover:scale-105 transition-all duration-500"
           />
+          {/* <div className="absolute inset-0 rounded-full bg-gradient-to-t from-blue-500/20 to-transparent animate-pulse"></div> */}
         </div>
-      </div>
-    </div>
-  );
-};
-
-export default Home;
+      </motion.div>
+    </section>
+  );
+}
