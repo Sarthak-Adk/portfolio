@@ -2,8 +2,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@import "tailwindcss";
-
 .bubbles {
   position: absolute;
   inset: 0;
